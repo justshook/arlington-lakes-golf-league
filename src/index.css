@@ -11,3 +11,19 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+/* Hide scrollbar for horizontal navigation */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Mobile touch improvements */
+@media (max-width: 640px) {
+  button, select, input {
+    min-height: 44px;
+  }
+}
