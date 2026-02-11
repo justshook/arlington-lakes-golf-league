@@ -1,6 +1,6 @@
-# Arlington Lakes Golf League
+# Friday night league
 
-Monday Night Golf League scheduler and management app.
+Friday night 2-man scramble league scheduler and points app.
 
 ## Deployment Guide (For Beginners)
 
@@ -31,7 +31,7 @@ Download the entire `arlington-lakes-golf-league` folder to your computer (e.g.,
 
 1. In GitHub Desktop, click **File > New Repository**
 2. Name: `arlington-lakes-golf-league`
-3. Description: `Monday Night Golf League App`
+3. Description: `Friday night league app`
 4. Local Path: Choose the folder where you downloaded this project
 5. Check **Initialize this repository with a README** = NO (we already have one)
 6. Click **Create Repository**
