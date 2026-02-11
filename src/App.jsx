@@ -127,13 +127,22 @@ export default function App() {
     });
 
     weeks.forEach((week) => {
+      const weeklyPointsByPlayer = new Map();
+
       rankTeams(week.teams).forEach((team) => {
-        [team.player1Id, team.player2Id].forEach((playerId) => {
-          const current = totals.get(playerId);
-          totals.set(playerId, {
-            ...current,
-            totalPoints: current.totalPoints + team.points,
-          });
+        const uniqueTeamPlayerIds = new Set([team.player1Id, team.player2Id]);
+
+        uniqueTeamPlayerIds.forEach((playerId) => {
+          const currentWeekPoints = weeklyPointsByPlayer.get(playerId) ?? 0;
+          weeklyPointsByPlayer.set(playerId, Math.max(currentWeekPoints, team.points));
+        });
+      });
+
+      weeklyPointsByPlayer.forEach((points, playerId) => {
+        const current = totals.get(playerId);
+        totals.set(playerId, {
+          ...current,
+          totalPoints: current.totalPoints + points,
         });
       });
     });
